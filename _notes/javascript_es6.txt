@@ -1,0 +1,100 @@
+// Legal
+var a = "apple";
+var a = "banana";
+
+// Illegal
+let a = "apple";
+let a = "banana";
+
+// Block Scope
+// let/const both have block scope...NOT GLOBAL
+// var has function scope
+
+
+////////////////
+
+// Arrow functions
+function(x) {
+    return x * x;
+}
+
+var someFunc = (x) => x * x; // Replaces standard function
+
+////////////////
+
+// Anonymous functions passed to a method don't have 
+// a 'this" reference!!!!!!!
+Solution: const that = this;
+someFunction(that, arg1, arg2, etc);
+
+////////////////
+
+// Arrow function differences!!!
+// "arguments" object = no longer defined/bound 
+//  with arrow functions
+
+
+// this keyword - no longer bound to arrow function
+//  arrow function uses the 'this' of the context 
+//  in which it is CREATED in
+// could be a function, object, or global context
+
+// Return an object from arrow function
+// Wrap object in parentheses
+this.setState(() => ({ error: err }));
+
+////////////////
+# Template strings
+# Uses back-tick...not a quote!
+console.log(`My name is ${obj.name}`);
+
+////////////////
+class Foo extends BaseClass {
+    constructor(arg1_ = "default value", arg2_) {
+        super();
+        this.arg1 = arg1_;
+        this.arg2 = arg2_;
+
+        # Functions don't have access to "this", so bind them
+        # at invocation time (called every time)
+        # or in constructor (called once)
+        this.doSomething = this.doSomething.bind(this);
+    }
+
+    doSomething() {
+        console.log("do whatever...);
+    }
+}
+
+////////////////
+let x = undefined, null, "";
+!x // true
+!!x // false
+
+let x = "foobar";
+!x // false;
+!!x // true
+
+////////////////
+
+
+////////////////
+
+
+////////////////
+
+
+////////////////
+
+
+////////////////
+
+
+////////////////
+
+
+////////////////
+
+
+////////////////
+

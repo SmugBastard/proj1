@@ -1,0 +1,136 @@
+
+# Install babel
+yarn global add babel-cli
+npm install -g babel-cli
+
+# Initial project
+yarn init
+
+# Install presets
+yarn add babel-preset-react
+yarn add babel-preset-env
+
+# Run babel command
+babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+# Recreate dependencies from package.json
+yarn install
+
+# VSC Addons
+Path Intellisense
+Babel ES6/ES7
+
+
+# React component props (properties)
+class Foo extends React.component {
+    constructor(props_) {
+        super(props_);
+
+        this.handleFooClick = this.handleFooClick.bind(this);
+        this.state = {
+            count: 0, 
+            options: props_.options
+        };
+    }
+    handleFooClick() {
+        // To make the system repaint with the new state, 
+        // RETURN A NEW STATE OBJECT with the changes
+        this.setState((oldState_) => {return {age: ++oldState_.age "New age", color: "new color}});        
+
+        // Note: There's a this.setState(obj) - DON'T USE IT!!!
+        // Funky behavior caused by it's async logic
+        
+        // When using this.setState(() => {return {}})
+        // Runtime will "merge" multiple calls to setState 
+        // to reflect accurate results
+
+    }
+}
+Foo.defaultProps = {
+    options = []
+};
+
+Ex: 
+const foo = "some data goes here";
+{
+    <Foo x="apple" data={foo} age=21 arry=[1,2,3,4] />
+}
+
+class Foo extends BaseClass {
+    constructor(arg1_ = "default value", arg2_) {
+        super();
+        this.arg1 = arg1_;
+        this.arg2 = arg2_;
+
+        # Functions don't have access to "this", so bind them
+        # at invocation time (called every time)
+        # or in constructor (called once)
+        this.doSomething = this.doSomething.bind(this);
+    }
+
+    doSomething() {
+        console.log("do whatever...);
+    }
+}
+
+
+
+# To update parent state, pass a function from 
+# parent to child as a "prop"/propery
+<Child handleFoo={this.parentsHandleFoo} />
+
+# NEVER NEVER NEVER update current state
+Create a new object with data and set that as current state
+
+
+# Stateless components
+# Simple component that doesn't manage state
+# No 'this' 
+const FooWidget = (props_) => {
+    const jsx = (<div><p>{props_.someField}<p>content goes here...</p> </div>);
+    return jsx;
+};
+FooWidget.defaultProps = {
+    a: "foo",
+    b: 123,
+    c: []
+
+};
+
+
+# Websites
+- Normailize (makes all web browers start from the same point)
+https://necolas.github.io/normalize.css/
+
+- BEM (block element modifier)
+http://getbem.com/
+
+- React-Modal (3rd party React modal component)
+https://github.com/reactjs/react-modal
+
+- Sass
+https://sass-lang.com/
+
+
+
+
+
+
+
+
+
+# Documentation:
+Dom Elements
+https://reactjs.org/docs/dom-elements.html
+
+Supported Attributes
+https://reactjs.org/docs/dom-elements.html#all-supported-html-attributes
+
+
+Events
+https://reactjs.org/docs/events.html
+
+Supported Events
+https://reactjs.org/docs/events.html#supported-events
+
+
