@@ -10,8 +10,10 @@ module.exports = {
     devtool: "cheap-module-eval-source-map",
     devServer: {
         contentBase: path.join(__dirname, "public"),
+        historyApiFallback: true, // Force react-router to return index.html for all 404 (not found) requests
         hot: true,
         writeToDisk: true
+
 
         // contentBase: path.join(__dirname, "public"),
         // clientLogLevel: "trace",
