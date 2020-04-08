@@ -1,13 +1,15 @@
+import moment from "moment";
+
+
 const defaultFilter = {
     text: "",
     amount: 0,
-    sortBy: "date", // date or amount
-    startDt: undefined,
-    endDt: undefined
+    sortBy: "title", // date or amount or title
+    startDt: moment().startOf("month"),
+    endDt: moment().endOf("month")
 };
 
 export default (state_ = defaultFilter, action_) => {
-    // console.log(`filterReducer call...action: ${action_}`);
     switch (action_.type) {
         case "UPDATE_FILTER":
             return { ...state_, ...action_.filterUpdates };

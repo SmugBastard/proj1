@@ -4,8 +4,8 @@ const path = require("path");
 
 module.exports = {
     entry: {
-        // app: "./src/expensify/expensify.js",
-        app: "./src/sandbox/high_order_components.js",
+        app: "./src/expensify/expensify.js",
+        // app: "./src/sandbox/high_order_components.js",
         // app: "./src/sandbox/high_order_components_ver2.js",
     },
     mode: "none",

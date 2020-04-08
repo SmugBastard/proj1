@@ -1,1 +1,11 @@
-export default () => (<div className="view_width">ExpenseDashboardPage...</div>);
+import ExpenseList from "./ExpenseList";
+import ExpenseListFilters from "./ExpenseListFilters";
+
+
+export default () => (
+    <div className="view_width">
+        <ExpenseList />
+        <ExpenseListFilters />
+    </div>
+);
+

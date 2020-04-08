@@ -4,10 +4,10 @@ export const updateFilter = (filterUpdates) => ({
     filterUpdates
 });
 
-export const defaultFilter = {
-    text: "",
-    amount: 0,
-    sortBy: "date", // date or amount
-    startDt: undefined,
-    endDt: undefined
-};
+// export const defaultFilter = {
+//     text: "",
+//     amount: 0,
+//     sortBy: "date", // date or amount
+//     startDt: undefined,
+//     endDt: undefined
+// };
